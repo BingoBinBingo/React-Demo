@@ -6,44 +6,43 @@
 
 }
 body{
-	    background: #f5f5f5;
+    background-color: rgba(32,45,92,.87);
 }
 h1{
 	text-align: center;
     font-size: 50px;
     padding: 20px 0;
-    color: rgba(0, 36, 171, 0.5);
-
+    color: #fff;
+    text-shadow: 0 0 2px #fff,0 0 3px  #fff,0 0 4px  #fff;
 }
 p{
     font-size: 16px;
 }
 .boxCenter{
-
-	width: 400px;
+	width: 800px;
 	position: relative;
 	margin:0 auto;
 }
 .todo-wrapper{
     background: #fff;
-    margin:40px auto 0;
+    margin:20px auto 0;
     position: relative;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);	
+    box-shadow: 0 0 20px 0 rgba(255,255, 255, 0.6);
 }
 .todoInput {
     position: relative;
     margin:0;
     width: 100%;
-    font-size: 24px;
+    font-size: 20px;
     font-family: inherit;
     font-weight: inherit;
     line-height: 1.4em;
     outline: none;
     color: inherit;
-    padding: 16px 16px 16px 40px;
+    padding: 16px 16px 16px 20px;
     border: none;
     background: rgba(0, 0, 0, 0.003);
-    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
@@ -52,10 +51,10 @@ p{
 .todo-main li {
     position: relative;
     font-size: 24px;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    border-bottom: 1px solid #ededed;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 0 0 40px;
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -64,16 +63,35 @@ p{
      cursor: pointer;
 }
 .todo-main li label span{
-    text-indent: 7px;
-    display: inline-block;
+    text-indent: 15px;
+    display: inline-flex;
     font-size: 18px;
+    width: 570px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;   
+}
+.todo-main li label i{
+
+    font-size: 13px;
+    color: #999;
+    font-style: inherit;
+
 }
 .todo-empty{
     padding: 20px;
     text-indent: 20px;
+    color: #999;
+    box-shadow: inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+.todo-footer{
+    position: relative;
+    height: 50px;
+    padding: 0 20px;
+    line-height: 50px;
 }
 .Padding{
-    padding: 10px 16px 10px 40px;
+    padding: 20px 16px 20px 40px;
 }
 .undone-title:before,.todo-empty:before{
     position: absolute;
@@ -86,25 +104,64 @@ p{
     background: rgba(0, 36, 171, 0.5);
 }
 .todo-empty:before{
-    background: #f66;
+    background: #20A0FF;
 }
-.delBtn{
-    display: none;
+
+.operate-btn,.allChecked{
     position: absolute;
-    right: 5px;
-    top: 11px;
-    width: 50px;
-    height: 20px;
+    top: 13px;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
     border-radius: 3px;
     text-align: center;
-    line-height: 20px;
     font-size: 12px;
-    background-color: #f04134;
+    letter-spacing: 0.5px;
     color: #fff;
     cursor: pointer;
 }
 
-.todo-main li:hover .delBtn{
+.todo-main .task-done:before{
+    color: #13ce66;
+    content: '';
+    position: absolute;
+    margin-left: 3px;
+    margin-top: 4px;
+    width: 17px;
+    left: 7px;
+    top: 13px;
+    height: 9px;
+    border-bottom: solid 2px #13ce66;
+    border-left: solid 3px #13ce66;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
 
+
+.item-todoed
+{   right: 190px;
+    background-color: #13ce66;
+}
+.allChecked{
+    left: 10px;
+    background-color: #20a0ff;
+}
+.item-untodo{
+    right: 100px;
+    background-color: #f7ba2a;
+}
+.delBtn,.delAllBtn{
+    right: 10px;
+    background-color: #ff4949;
+
+}
+.delBtn{
+    display: none;
+}
+.todo-main li:hover .delBtn{
     display: block;
+}
+
+.input_check{
+    display: none;
 }

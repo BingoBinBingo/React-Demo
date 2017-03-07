@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class TodoFooter extends React.Component{
   deleteAll(){
     this.props.clearDone()
@@ -8,14 +9,19 @@ class TodoFooter extends React.Component{
     this.props.changeTodoState(null,e.target.checked,true)
   }
   render(){
-    let minus = this.props.todoCount - this.props.todoDoneCount
+    let untodos = this.props.todoCount - this.props.todoDoneCount
+    let todoed  = this.props.todoDoneCount
     return (
       <div className="todo-footer">
-        <label>
-          <checkbox checked={this.props.isAllChecked} onChange={this.changeAll.bind(this)}/>全选
+
+        <div className="operate-pannel">
+        <label className="allChecked">
+          <input className="input_check" type="checkbox" checked={this.props.isAllChecked} onChange={this.changeAll.bind(this)} />全选
         </label>
-        <span className="item-left">还剩{minus}未完成</span>
-        <button type="danger"onClick={this.deleteAll.bind(this)}>清除全部已完成</button>
+        <span className="operate-btn item-untodo">未完成:{untodos}</span>
+        <span className="operate-btn item-todoed">已完成:{todoed}</span>
+        </div>
+        <a className="operate-btn delAllBtn" onClick={this.deleteAll.bind(this)}>清空已完成</a>
       </div>
     )
   }
