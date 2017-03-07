@@ -137,7 +137,10 @@ p{
     transform: rotate(-45deg);
 }
 
-
+.item-alltodo{
+    background-color: #20a0ff;
+    right: 280px;
+}
 .item-todoed
 {   right: 190px;
     background-color: #13ce66;

@@ -11,6 +11,7 @@ class TodoFooter extends React.Component{
   render(){
     let untodos = this.props.todoCount - this.props.todoDoneCount
     let todoed  = this.props.todoDoneCount
+    let alltodos = this.props.todoCount
     return (
       <div className="todo-footer">
 
@@ -18,6 +19,7 @@ class TodoFooter extends React.Component{
         <label className="allChecked">
           <input className="input_check" type="checkbox" checked={this.props.isAllChecked} onChange={this.changeAll.bind(this)} />全选
         </label>
+        <span className="operate-btn item-alltodo">所有:{alltodos}</span>
         <span className="operate-btn item-untodo">未完成:{untodos}</span>
         <span className="operate-btn item-todoed">已完成:{todoed}</span>
         </div>
