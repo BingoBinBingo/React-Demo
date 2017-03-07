@@ -1,0 +1,110 @@
+*{
+	padding: 0;
+	margin:0;
+	list-style: none;
+    font-size: 15px;
+
+}
+body{
+	    background: #f5f5f5;
+}
+h1{
+	text-align: center;
+    font-size: 50px;
+    padding: 20px 0;
+    color: rgba(0, 36, 171, 0.5);
+
+}
+p{
+    font-size: 16px;
+}
+.boxCenter{
+
+	width: 400px;
+	position: relative;
+	margin:0 auto;
+}
+.todo-wrapper{
+    background: #fff;
+    margin:40px auto 0;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);	
+}
+.todoInput {
+    position: relative;
+    margin:0;
+    width: 100%;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4em;
+    outline: none;
+    color: inherit;
+    padding: 16px 16px 16px 40px;
+    border: none;
+    background: rgba(0, 0, 0, 0.003);
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+.todo-main li {
+    position: relative;
+    font-size: 24px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    border-bottom: 1px solid #ededed;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.todo-main li label,.todo-main li label input{
+     cursor: pointer;
+}
+.todo-main li label span{
+    text-indent: 7px;
+    display: inline-block;
+    font-size: 18px;
+}
+.todo-empty{
+    padding: 20px;
+    text-indent: 20px;
+}
+.Padding{
+    padding: 10px 16px 10px 40px;
+}
+.undone-title:before,.todo-empty:before{
+    position: absolute;
+    height: 6px;
+    content: '';
+    width: 20px;
+    margin: 9px 0 0 -30px;
+}
+.undone-title:before{
+    background: rgba(0, 36, 171, 0.5);
+}
+.todo-empty:before{
+    background: #f66;
+}
+.delBtn{
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 11px;
+    width: 50px;
+    height: 20px;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    background-color: #f04134;
+    color: #fff;
+    cursor: pointer;
+}
+
+.todo-main li:hover .delBtn{
+
+    display: block;
+}
