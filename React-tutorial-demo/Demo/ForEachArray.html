@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <link rel="stylesheet" href="../build/css/bootstrap.min.css">
+    <script src="../build/js/react.min.js"></script>
+    <script src="../build/js/react-dom.min.js"></script>
+    <script src="../build/js/babel.min.js"></script>
+</head>
+
+<body>
+
+<!-- 插入位置的容器 id 为 container -->
+    <div id="example">
+
+    </div>
+
+      <script type="text/babel">
+       
+       var MessageBox = React.createClass({
+           
+        render:function(){
+           var subarray = [];
+           for(var i=0;i<3;i++){
+
+            subarray.push(
+
+              <Submessage key = {'mag'+i} />
+            )
+
+           }
+               return(
+
+               <div>
+                 <h1>你好世界!</h1>
+                
+                 {subarray}
+               </div>
+                
+
+               )
+
+        }
+
+       });
+
+         var Submessage = React.createClass({
+
+            render:function(){
+                return(
+                 <div>
+                 <h3>写代码很酷!</h3>
+                  <Footer/>                   
+                 </div>
+                 )
+            }
+
+         });
+
+
+           var Footer = React.createClass({
+
+            render:function(){
+            return(
+               <small>嘿~没说完呢</small>
+             )
+            }
+
+         });
+
+        ReactDOM.render(<MessageBox/>,document.getElementById('example'),function(){console.log('渲染完成')})
+
+    </script>
+</body>
+
+</html>

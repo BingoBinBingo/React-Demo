@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <link rel="stylesheet" href="../build/css/bootstrap.min.css">
+    <script src="../build/js/react.min.js"></script>
+    <script src="../build/js/react-dom.min.js"></script>
+    <script src="../build/js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+          var StateComponent = React.createClass({
+           
+           getInitialState:function(){
+
+           return{ linked:false };
+              
+           },
+           
+           handleClick:function(e){
+
+            this.setState({linked:!this.state.linked});
+
+           },
+           render:function(){
+
+           var Linkedtext = this.state.linked ? "linked" :"unlinked";
+
+            return(
+
+            <div onClick={this.handleClick}>
+              
+             <h2>click this and input you main:{Linkedtext}</h2>
+
+            </div>
+
+            );
+
+           }
+
+          })
+
+      ReactDOM.render(
+        <StateComponent />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <link rel="stylesheet" href="../build/css/bootstrap.min.css">
+    <script src="../build/js/react.min.js"></script>
+    <script src="../build/js/react-dom.min.js"></script>
+    <script src="../build/js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      var title ='React';
+
+      var PropsValidation = React.createClass({
+            
+          propTypes:{
+
+            title:React.PropTypes.string.isRequired,
+
+          },
+
+          render:function(){
+
+           return <h1>Hey,this is :{this.props.title}</h1>;
+
+           }
+      });
+
+      ReactDOM.render(
+        <PropsValidation title={title}/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

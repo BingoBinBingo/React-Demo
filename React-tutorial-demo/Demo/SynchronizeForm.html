@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <link rel="stylesheet" href="../build/css/bootstrap.min.css">
+    <script src="../build/js/react.min.js"></script>
+    <script src="../build/js/react-dom.min.js"></script>
+    <script src="../build/js/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+     
+      var FormState = React.createClass({
+      getInitialState: function() {
+        return {value: 'Hey ！ React'};
+      },
+      handleChange: function(event) {
+        this.setState({value: event.target.value});
+      },
+      render: function() {
+        var value = this.state.value;
+        return <div>
+                <input type="text" value={value} onChange={this.handleChange} /> 
+                <h4>{value}</h4>
+               </div>;
+      }
+    });
+    ReactDOM.render(
+      <FormState />,
+      document.getElementById('example')
+    );
+    </script>
+  </body>
+</html>        
