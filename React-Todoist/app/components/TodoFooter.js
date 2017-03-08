@@ -1,19 +1,23 @@
 import React from 'react'
 
 
-class TodoFooter extends React.Component{
-  deleteAll(){
+class TodoFooter extends React.Component {
+  deleteAll() {
     this.props.clearDone()
   }
-  changeAll(e){
-    this.props.changeTodoState(null,e.target.checked,true)
+  changeAll(e) {
+    this.props.changeTodoState(null, e.target.checked, true)
   }
-  render(){
+  render() {
     let untodos = this.props.todoCount - this.props.todoDoneCount
-    let todoed  = this.props.todoDoneCount
+    let todoed = this.props.todoDoneCount
     let alltodos = this.props.todoCount
-    return (
-      <div className="todo-footer">
+    if (alltodos == 0) {
+      return false
+    } else {
+
+      return (
+        <div className="todo-footer">
 
         <div className="operate-pannel">
         <label className="allChecked">
@@ -25,7 +29,10 @@ class TodoFooter extends React.Component{
         </div>
         <a className="operate-btn delAllBtn" onClick={this.deleteAll.bind(this)}>清空已完成</a>
       </div>
-    )
+      )
+
+    }
+
   }
 }
 

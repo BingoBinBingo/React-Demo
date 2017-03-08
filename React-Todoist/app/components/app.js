@@ -10,7 +10,7 @@ import TodoMain from './TodoMain'
 import TodoFooter from './TodoFooter'
 
 //定义组件
-class App extends React.Component { 
+class App extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -19,46 +19,50 @@ class App extends React.Component {
     }
   }
   addTodo(item) {
-    this.state.todos.push(item)
-    this.setState({todos: this.state.todos});  //设置状态
-  }
-  // 改变任务状态，传递给TodoItem和Footer组件的方法
-  changeTodoState(index, isDone, isChangeAll=false){   //初始化isChangeAll为false
-    if(isChangeAll){     //全部操作
+      this.state.todos.push(item)
       this.setState({
-        todos: this.state.todos.map((todo) => {
-          todo.isDone = isDone;
-          return todo;
-        }),
-        isAllChecked: isDone
-      });
-    }else{   //操作其中一个todo
-      this.state.todos[index].isDone = isDone;
-      this.allChecked();
+        todos: this.state.todos
+      }); //设置状态
     }
-  }
-  // 判断是否所有任务的状态都完成，同步底部的全选框
+    // 改变任务状态，传递给TodoItem和Footer组件的方法
+  changeTodoState(index, isDone, isChangeAll = false) { //初始化isChangeAll为false
+      if (isChangeAll) { //全部操作
+        this.setState({
+          todos: this.state.todos.map((todo) => {
+            todo.isDone = isDone;
+            return todo;
+          }),
+          isAllChecked: isDone
+        });
+      } else { //操作其中一个todo
+        this.state.todos[index].isDone = isDone;
+        this.allChecked();
+      }
+    }
+    // 判断是否所有任务的状态都完成，同步底部的全选框
   allChecked() {
     let isAllChecked = false;
     if (this.state.todos.every(todo => todo.isDone)) {
       isAllChecked = true;
     }
-    this.setState({   //改变状态，组件重绘
+    this.setState({ //改变状态，组件重绘
       todos: this.state.todos,
       isAllChecked: isAllChecked
     });
   }
-  clearDone(){
+  clearDone() {
     let todos = this.state.todos.filter(todo => !todo.isDone)
     this.setState({
-      todos : todos
+      todos: todos
     })
   }
   deleteTodo(index) {
-    this.state.todos.splice(index,1)
-    this.setState({todos: this.state.todos})
+    this.state.todos.splice(index, 1)
+    this.setState({
+      todos: this.state.todos
+    })
   }
-  render(){
+  render() {
     let info = {
       isAllChecked: this.state.isAllChecked,
       todoCount: this.state.todos.length || 0,
@@ -75,4 +79,4 @@ class App extends React.Component {
 }
 
 
-ReactDOM.render(<App/>,document.getElementById('container'))
+ReactDOM.render(<App/>, document.getElementById('container'))

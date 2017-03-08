@@ -65,6 +65,7 @@ p{
 .todo-main li label span{
     text-indent: 15px;
     display: inline-flex;
+    color: #2c3e50;
     font-size: 18px;
     width: 570px;
     overflow: hidden;
@@ -74,7 +75,7 @@ p{
 .todo-main li label i{
 
     font-size: 13px;
-    color: #999;
+    color: #bbb;
     font-style: inherit;
 
 }
@@ -98,7 +99,7 @@ p{
     height: 6px;
     content: '';
     width: 20px;
-    margin: 9px 0 0 -30px;
+    margin: 8px 0 0 -30px;
 }
 .undone-title:before{
     background: rgba(0, 36, 171, 0.5);
@@ -132,7 +133,7 @@ p{
     top: 13px;
     height: 9px;
     border-bottom: solid 2px #13ce66;
-    border-left: solid 3px #13ce66;
+    border-left: solid 2px #13ce66;
     -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
 }

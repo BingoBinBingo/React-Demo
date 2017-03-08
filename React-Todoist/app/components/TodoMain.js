@@ -2,8 +2,8 @@ import React from 'react'
 import TodoItem from './TodoItem'
 
 class TodoMain extends React.Component {
-  render(){
-    if(this.props.todos.length == 0) {
+  render() {
+    if (this.props.todos.length == 0) {
       return (
         <div className="todo-empty">目前没有待办事项</div>
       )
@@ -22,4 +22,3 @@ class TodoMain extends React.Component {
   }
 }
 export default TodoMain
-
